@@ -1,5 +1,8 @@
 services:
-  - name: app
+  - name: fastapi-app
+    type: web
     env: python
+    plan: free
+    pythonVersion: 3.10
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port 80
+    startCommand: python -m uvicorn main:app --host 0.0.0.0 --port 10000
